@@ -1,0 +1,21 @@
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+.reset-button {
+  margin-top: 10px;
+}
