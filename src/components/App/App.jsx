@@ -1,4 +1,4 @@
-import { dedNum, dedNum2, dedNum3, winGame, resetEl } from "../store/actions/action";
+import { dedNum, dedNum2, dedNum3, winGame, resetEl } from "../../store/actions/action";
 import { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 
@@ -32,22 +32,20 @@ const App = () => {
 
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <>
-        <form style={{ color: 'red' }} onSubmit={ShortIn}>
-          <input style={{ color: 'red' }} type="number" name="usernum" />
-          <input style={{ color: 'red' }} type="submit" />
-        </form>
-        <>
-          <h1 style={{ color: 'red' }}>{state.title}</h1>
-          {state.completed ? (
-            <button style={{ color: 'red' }} onClick={resetHandle}>{state.description}</button>
-          ) : (
-            <p>{state.description}</p>
-          )}
-        </>
-      </>
-    </div>
+    <div className="container">
+    <form onSubmit={ShortIn} className="form-container">
+      <input type="number" name="usernum" className="input-field" />
+      <input type="submit" value="Угадать" className="submit-button" />
+    </form>
+    <>
+      <h1>{state.title}</h1>
+      {state.completed ? (
+        <button onClick={resetHandle} className="reset-button">{state.description}</button>
+      ) : (
+        <p>{state.description}</p>
+      )}
+    </>
+  </div>
   );
 };
 export default App;
